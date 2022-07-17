@@ -5,7 +5,7 @@ namespace App\Http\Resources;
 use App\Models\RateBook;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class bookResource extends JsonResource
+class commentResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -16,12 +16,11 @@ class bookResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'id' => $this->id,
+             'id'=>$this->id,
+             'created_at'=>$this->created_at,
             'name' => $this->name,
-            'description' => $this->description,
-            'price' => $this->price,
-            'category_id' => $this->category_id,
-            'value' => $this->value,
+            'comment_text' => $this->comment_text,
+          
            
         ];
     }

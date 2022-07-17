@@ -1,6 +1,8 @@
 <?php
 use App\Http\Controllers\Api\bookController;
 use App\Http\Controllers\Api\categoryController;
+use App\Http\Controllers\Api\CommentController ;
+use App\Http\Controllers\Api\FavoriteConteoller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
@@ -23,7 +25,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::resource('/books', bookController::class);
 Route::resource('/categorys', categoryController::class);
-
+Route::resource('/comments', CommentController::class);
+Route::resource('/favorites', FavoriteConteoller::class);
 
 Route::apiResource('ratebook', 'App\Http\Controllers\Api\RateBookController');
 
