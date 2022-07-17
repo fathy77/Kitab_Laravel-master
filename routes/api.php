@@ -3,6 +3,7 @@ use App\Http\Controllers\Api\bookController;
 use App\Http\Controllers\Api\categoryController;
 use App\Http\Controllers\Api\CommentController ;
 use App\Http\Controllers\Api\FavoriteConteoller;
+use App\Http\Controllers\Api\orderbyController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
@@ -27,6 +28,8 @@ Route::resource('/books', bookController::class);
 Route::resource('/categorys', categoryController::class);
 Route::resource('/comments', CommentController::class);
 Route::resource('/favorites', FavoriteConteoller::class);
+Route::get('/orderby/{type}', [orderbyController::class,'order']);
+Route::get('/filterby/{catogry}', [orderbyController::class,'filterby']);
 
 Route::apiResource('ratebook', 'App\Http\Controllers\Api\RateBookController');
 
